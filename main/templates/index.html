@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="home">
+    <h1>Welcome to Our Tourism Website</h1>
+    <p>Discover amazing destinations and plan your next adventure!</p>
+    <img src="{% static 'images/hero-image.jpg' %}" alt="Beautiful landscape">
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We are passionate about helping you explore the world and create unforgettable memories.</p>
+    <div class="skills">
+        <h3>Our Expertise</h3>
+        <div class="skill">
+            <span>Travel Planning</span>
+            <div class="progress-bar" data-progress="90"></div>
+        </div>
+        <div class="skill">
+            <span>Customer Service</span>
+            <div class="progress-bar" data-progress="85"></div>
+        </div>
+        <div class="skill">
+            <span>Local Knowledge</span>
+            <div class="progress-bar" data-progress="95"></div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Our Destinations</h2>
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="beach">Beaches</button>
+        <button class="filter-btn" data-filter="mountain">Mountains</button>
+        <button class="filter-btn" data-filter="city">Cities</button>
+    </div>
+    <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="beach">
+            <img src="{% static 'images/beach1.jpg' %}" alt="Beach 1">
+            <h3>Tropical Paradise</h3>
+            <p>Enjoy the sun and sand in this beautiful beach resort.</p>
+        </div>
+        <div class="portfolio-item" data-category="mountain">
+            <img src="{% static 'images/mountain1.jpg' %}" alt="Mountain 1">
+            <h3>Alpine Adventure</h3>
+            <p>Experience the thrill of hiking in the majestic mountains.</p>
+        </div>
+        <div class="portfolio-item" data-category="city">
+            <img src="{% static 'images/city1.jpg' %}" alt="City 1">
+            <h3>Urban Exploration</h3>
+            <p>Discover the vibrant culture and history of bustling cities.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+        <img src="{% static 'images/gallery1.jpg' %}" alt="Gallery image 1" class="gallery-img">
+        <img src="{% static 'images/gallery2.jpg' %}" alt="Gallery image 2" class="gallery-img">
+        <img src="{% static 'images/gallery3.jpg' %}" alt="Gallery image 3" class="gallery-img">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
+    <div id="form-message"></div>
+</section>
+{% endblock %}
